@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Human Cost of Migration</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav id="side-nav">
+  <ul>
+    <li data-target="background" class="active" aria-label="Background">
+      <i class="fas fa-home"></i>
+      <span class="tooltip">Background</span>
+    </li>
+    <li data-target="interactive-questions" aria-label="Interactive Questions">
+      <i class="fas fa-question-circle"></i>
+      <span class="tooltip">Interactive Questions</span>
+    </li>
+    <li data-target="why-migrate" aria-label="Why Migrate">
+      <i class="fas fa-globe"></i>
+      <span class="tooltip">Why Migrate?</span>
+    </li>
+    <li data-target="transportation-types" aria-label="Transportation Types">
+      <i class="fas fa-truck"></i>
+      <span class="tooltip">Transportation Types</span>
+    </li>
+    <li data-target="migration-chart-section" aria-label="Missing Migrants Over Time">
+      <i class="fas fa-chart-line"></i>
+      <span class="tooltip">Over Time</span>
+    </li>
+    <li data-target="migration-origins" aria-label="Migration Origins">
+      <i class="fas fa-map-marker-alt"></i>
+      <span class="tooltip">Migration Origins</span>
+    </li>
+    <li data-target="globe-visualization" aria-label="Globe Visualization">
+      <i class="fas fa-globe-americas"></i>
+      <span class="tooltip">Globe Visualization</span>
+    </li>
+    <li data-target="route-environment" aria-label="Route Environment">
+      <i class="fas fa-route"></i>
+      <span class="tooltip">Route Environment</span>
+    </li>
+    <li data-target="resources" aria-label="Resources">
+      <i class=" fas fa-info-circle"></i>
+      <span class="tooltip">Resources</span>
+    </li>
+    <li data-target="authors" aria-label="Authors">
+      <i class="fas fa-users"></i>
+      <span class="tooltip">Authors</span>
+    </li>
+    <li data-target="citation-acknowledgements" aria-label="Citation Information">
+      <i class="fas fa-file-alt"></i>
+      <span class="tooltip">Citation Information</span>
+    </li>
+
+  </ul>
+</nav>
+
+<!-- Intro Section -->
+<section id="background" class="full-screen">
+  <div id="intro-text">
+    <h1 class="fade-in-title title">The Human Cost of Migration</h1>
+  </div>
+</section>
+
+<!-- Interactive Page: Ask the User Questions -->
+<section id="interactive-questions" class="full-screen" >
+  <h2 class="section-title">How Much Do You Know About Missing Migrants?</h2>
+  <div id="questions-container"></div>
+</section>
+
+<section id="numbers" class="missing-migrants-section">
+  <div class="missing-migrants-container">
+    <div class="missing-migrants-counter" id="missingMigrantsCounter">0</div>
+    <p class="missing-migrants-description">
+      <strong>Missing or dead migrants have been reported since 2014.</strong>
+    </p>
+    <p class="missing-migrants-fading-text" id="fadingText">
+      And according to sources, this is an <strong>undercount!</strong>
+    </p>
+    <div class="emotive-questions">
+      <p id="question1" class="hidden">What drives people to risk everything for an uncertain future?</p>
+      <p id="question2" class="hidden">And who are they?</p>
+    </div>
+    <p class="missing-migrants-asterisk">
+      * In this website, "dead" and "missing" are used interchangeably since reliable differentiation data is unavailable.
+    </p>
+  </div>
+</section>
+
+<!-- Why Do People Migrate Section -->
+<section id="why-migrate" class="full-screen placeholder">
+  <h2 class="section-title">Unveiling the Reasons Behind Migration</h2>
+</section>
+
+<!-- Transportation Types Section -->
+<section id="transportation-types" class="full-screen">
+  <h2 class="section-title"> Types of Transportation Used by Migrants</h2>
+  <p>Placeholder for conceptual visualization or narrative on transportation types, such as walking, boats, and trucks.</p>
+</section>
+
+<!-- Missing Migrants Over Time Section -->
+<section id="migration-chart-section" class="full-screen">
+  <h2 class="section-title">Missing Migrants Over Time </h2>
+  <div id="chart-container">
+    <svg id="migration-chart" width="700" height="400"></svg>
+  </div>
+</section>
+
+<!-- Migration Origins Section -->
+<section id="migration-origins" class="full-screen">
+  <h2 class="title">Mapping Global Migration: Origins and Destinations</h2>
+  <div id="globe-container"></div>
+</section>
+
+<!-- Globe Visualization Section -->
+<section id="globe-visualization" class="full-screen">
+  <h2 class="section-title"> Mapping Global Migration: Origins and Destinations</h2>
+  <p>
+    Explore global migration patterns with this interactive globe. Arcs connect countries of origin (blue dots) to their most frequent destinations (red dots). Drag to rotate the globe and hover over arcs to reveal the migration routes and countries involved.
+  </p>
+  <div id="globe-container"></div> <!-- Container for the globe -->
+</section>
+
+<!-- Gender Visualization Section -->
+<section id="route-environment" class="full-screen">
+  <h2 class="section-title">Distribution of Dead or Missing Migrants by Route</h2>
+  <p>This visualization shows the distribution of dead or missing migrants across routes, filtered by gender, over time.</p>
+  <p>Hover over legend to see the corresponding area on the chart</p>
+  <label for="gender-dropdown">Filter by Gender:</label>
+  <select id="gender-dropdown">
+    <option value="all">All Genders</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
+  <div id="chart-container">
+    <div id="route-legend"></div>
+    <svg id="stacked-chart"></svg>
+  </div>
+</section>
+
+<!-- Resources Section -->
+<section id="resources" class="full-screen">
+  <h2 class="section-title">Explore and Take Action</h2>
+  <p>Learn, support, and make a difference with these resources.</p>
+</section>
+
+<!-- Authors Section -->
+<section id="authors" class="authors-section">
+  <div class="intro">
+    <h2 class="section-title">Meet the Authors</h2>
+    <p>Drawing from our roots in Ethiopia and Somalia, we have witnessed the profound challenges migration presents - stories of resilience, struggle, and loss. Our mission is to shed light on the plight of missing migrants and inspire action for meaningful change.</p>
+  </div>
+  <div class="authors-container">
+    <div class="author">
+      <img src="../img/hewan_pic.jpeg" alt="Hewan" class="author-img">
+      <h2>Hewan Kidanemariam</h2>
+    </div>
+    <div class="author">
+      <img src="../img/hayat_pic.jpeg" alt="Hayat" class="author-img">
+      <h2>Hayat Hassan</h2>
+    </div>
+    <div class="author">
+      <img src="../img/eden_pic.png" alt="Eden" class="author-img">
+      <h2>Eden Seyoum</h2>
+    </div>
+  </div>
+</section>
+
+<!-- Citation and Acknowledgements Section -->
+<section id="citation-acknowledgements" class="full-screen">
+  <h1 class="section-title"> Citation and Acknowledgments</h1>
+</section>
+
+
+<!-- Scripts -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="js/flag.js" defer></script>
+<script src="js/humanChart.js" defer></script>
+<script src="js/globe.js" defer></script>
+<script src="js/navigation.js" defer></script>
+<script src="js/cases.js" defer></script>
+<script src="js/line-chart.js" defer></script>
+<script src="js/reasonsmigration.js" defer></script>
+<script src="js/questions.js" defer></script>
+<script src="js/resource.js" defer></script>
+<script src="js/authors.js" defer></script>
+<script src="js/citation.js" defer></script>
+<script src="js/number.js" defer></script>
+
+
+</body>
+</html>

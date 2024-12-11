@@ -1,0 +1,766 @@
+/* General Page Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: black; /* Taken from Eden's style */
+}
+
+/* Disable scrolling for the entire page */
+body.no-scroll,
+html.no-scroll {
+    overflow: hidden;
+    height: 100%;
+}
+
+/* Full-screen sections */
+.full-screen {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Background Section */
+#background {
+    background-image: url("../img/refugee.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+#intro-text {
+    text-align: center;
+}
+
+.fade-in-title {
+    font-size: 3.5rem;
+    margin: 0;
+    opacity: 0;
+    animation: fadeInTitle 3s ease-out forwards;
+}
+
+.fade-in-author {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeInTitle 5s ease-out forwards;
+}
+
+
+/* Animations */
+@keyframes fadeInTitle {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/*globe styling*/
+#globe-container {
+    width: 800px;
+    height: 730px;
+    margin: auto;
+}
+
+
+.country {
+    fill: rgba(8,0,35,0.63);
+    stroke: #fff;
+    stroke-width: 0.5;
+}
+
+.migration-arc {
+    fill: none;
+    stroke: red;
+    stroke-width: 1;
+    opacity: 0.7;
+}
+
+
+
+#migration-origins {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#migration-origins {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Side Navigation Bar */
+#side-nav {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #111;
+    padding: 10px 5px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+#side-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#side-nav li {
+    margin: 10px 0;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+}
+
+#side-nav li i {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#side-nav li.active i,
+#side-nav li:hover i {
+    color: #3b8cc5;
+    transform: scale(1.2);
+}
+
+#side-nav .tooltip {
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    transform: translateY(-50%);
+    background-color: #222;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+}
+
+#side-nav li:hover .tooltip {
+    opacity: 1;
+    transform: translateY(-50%) translateX(5px);
+}
+
+#side-nav li.active {
+    color: #3b8cc5;
+}
+
+
+/* Gender css */
+/* General tooltip styling */
+#stacked-tooltip {
+    font-size: 0.8rem;
+    z-index: 1000;
+    pointer-events: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+/* Container holding legend and chart side by side */
+#chart-container {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px;
+}
+
+/* Legend positioned in a column on the left side */
+#route-legend {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px; /* Space between legend and chart */
+}
+
+/* Legend items listed top-down */
+#route-environment .legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#route-environment .legend-item div {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+
+
+
+
+
+
+
+
+/* Globe Visualization */
+
+#globe-visualization {
+    padding-top: 50px;
+    box-sizing: border-box;
+}
+
+
+#globe-visualization p {
+    max-width: 600px;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0 auto 10px auto;
+}
+
+#globe-container {
+    margin-top: -50px; /
+padding-top: 0;
+}
+
+/* Why Migrate Section Styling */
+
+/* Pulsating effect for expandable nodes */
+.pulsate {
+    animation: pulsate 1.5s infinite;
+}
+
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px #2c7be5;
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px #2c7be5;
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px #2c7be5;
+    }
+}
+
+/* Interactive Questions Section */
+body {
+    background-color: black;
+    color: #e0e5ec;
+    font-family: 'Arial', sans-serif;
+}
+
+.full-screen {
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Questions Container */
+#questions-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Question Box */
+.question-box {
+    background-color: #1c1f33;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.8s ease;
+}
+
+.question-title {
+    font-size: 1.5rem;
+    color: #65b2d9;
+    margin-bottom: 10px;
+}
+
+.question-text {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Buttons */
+.next-btn, .explore-btn, .watch-video-btn {
+    background-color: #65b2d9;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.next-btn:hover, .explore-btn:hover, .watch-video-btn:hover {
+    background-color: #74c0d0;
+}
+
+/* Results Box */
+.results-box {
+    background-color: #1c1f33;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.8s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Styling for Questions Container in Interactive Section */
+#interactive-questions #questions-container {
+    margin-top: 10px;
+    padding: 20px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+/* Full-Screen Section Spacing for Interactive Questions */
+#interactive-questions.full-screen {
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Authors Section */
+/* General Section Styling */
+.authors-section {
+    background-color: black; /* Dark modern background */
+    color: #ffffff; /* White text for contrast */
+    font-family: 'Arial', sans-serif;
+    padding: 120px 20px;
+    text-align: center;
+}
+
+.authors-section .intro {
+    margin-bottom: 40px;
+}
+
+.authors-section h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.authors-section p {
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: #b3b3b3; /* Softer white for paragraph text */
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Authors Container */
+.authors-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Author Card */
+.author-card {
+    background-color: black; /* Subtle dark card background */
+    border-radius: 8px;
+    width: 280px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+.author-card:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+/* Author Image (Using Background Images) */
+.author-img {
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Specific Background Images for Each Author */
+.hewan-icon {
+    background-image: url('../img/hewan_pic.jpeg');
+}
+
+.hayat-icon {
+    background-image: url('../img/hayat_pic.jpeg');
+}
+
+.eden-icon {
+    background-image: url('../img/eden_pic.png');
+}
+
+/* Author Text */
+.author-card h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.author-card p {
+    font-size: 0.7em;
+    line-height: 1.4;
+    color: #b3b3b3; /* Softer white for better readability */
+}
+
+/* Transportation Styling */
+.button {
+    background-color: #65b2d9; /* Base color */
+    background-image: linear-gradient(to right, #65b2d9, #2980b9); /* Gradient effect */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.button:hover {
+    background-image: linear-gradient(to right, #2980b9, #3498db);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+.button:active {
+    background-color: #3498db;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(1px);
+}
+
+.button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.button:hover::after {
+    opacity: 1;
+}
+
+.button:focus {
+    outline: none;
+    border-color: #fff;
+}
+
+/* Citation Styling */
+
+.citation-text, .acknowledgment-text, .additional-info {
+    background-color: #34495e;
+    padding: 20px;
+    border-left: 4px solid #3498db;
+    margin: 10px auto;
+    max-width: 800px;
+    line-height: 1.8;
+    font-size: 1.1em;
+    color: white;
+}
+
+.citation-text a, .acknowledgment-text a {
+    color: #2980b9;
+}
+
+.citation-text a:hover, .acknowledgment-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* Title Styling */
+.section-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem;
+    color: #3498db;
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Layout */
+.layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: -250px
+}
+
+/* Chart Styling */
+
+
+
+/* Scope all styles to #migration-chart-section to avoid interfering with other code */
+
+/* Ensure the section can grow vertically and contain its elements */
+#migration-chart-section.full-screen {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Instruction box styling */
+#migration-chart-section .info-container {
+    background-color: #2c3e50;
+    color: white;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    max-width: 700px;
+    padding: 10px;
+    margin: 10px auto;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+/* Main layout container */
+#migration-chart-section .layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+}
+
+/* Regions container at the top - horizontal layout */
+#migration-chart-section .regions-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* When showing routes of a single region, display them horizontally */
+#migration-chart-section .route-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Chart and summary side by side */
+#migration-chart-section .center-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the entire content */
+}
+
+/* Chart container styling (chart is already in HTML) */
+#migration-chart-section .chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Box styling for summary */
+#migration-chart-section .box {
+    background-color: #1e1e2f;
+    padding: 10px;
+    border-radius: 5px;
+    color: #a0aec0;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.5);
+}
+
+/* Title styling for summary */
+#migration-chart-section .box h3 {
+    margin-top: 0;
+    color: #a0aec0;
+}
+
+/* Regions Box (for the vertically scrollable region and routes if needed) */
+#migration-chart-section .regions-box {
+    flex: 1;
+    background-color: #2c3e50;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    max-height: 300px;
+    overflow-y: auto;
+    margin-right: 20px;
+}
+
+#migration-chart-section .regions-box h3 {
+    color: #58a6ff;
+    margin-bottom: 10px;
+}
+
+/* Region buttons (top-level regions) */
+#migration-chart-section .region-button {
+    background-color: #1e1e2f;
+    color: #a0aec0;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px;
+    min-width: 120px;
+}
+
+#migration-chart-section .region-button:hover {
+    background-color: #58a6ff;
+    color: #1e1e2f;
+}
+
+/* Route items */
+#migration-chart-section .route-item {
+    background-color: #1e1e2f;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #a0aec0;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+#migration-chart-section .route-item:hover {
+    background-color: #58a6ff;
+    color: #1e1e2f;
+}
+
+/* Summary box styling */
+#migration-chart-section .summary-box {
+    background-color: #282c34;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    max-width: 200px;
+    margin-right: 20px;
+}
+
+#migration-chart-section .summary-box h3 {
+    color: #58a6ff;
+    margin-bottom: 10px;
+}
+
+/* Axis labels */
+#migration-chart-section .axis-label {
+    fill: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-anchor: middle;
+}
+
+
+/* Initial state for elements */
+.fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Visible state for elements when scrolled into view */
+.fade-in-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
